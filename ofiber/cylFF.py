@@ -37,9 +37,9 @@ def IrradFFx(R,Theta,Phi,l,lmbd,a,V,b):
     '''
     FFl = np.square(FFazim(l,lmbd,a,Theta,V,b))
     k = 2*np.pi/lmbd
-    kaVcub = np.power(np.multiply(k*a,V),4)
+    kaVquart = np.power(np.multiply(k*a,V),4)
     cossq = np.square(np.cos(np.multiply(l,Phi)))
-    return np.divide(np.multiply(FFl,np.multiply(kaVcub,cossq)),np.square(k*R))
+    return np.divide(np.multiply(FFl,np.multiply(kaVquart,cossq)),np.square(k*R))
 
 
 def IrradFFxazint(R,Theta,l,lmbd,a,V,b):
@@ -51,5 +51,5 @@ def IrradFFxazint(R,Theta,l,lmbd,a,V,b):
     '''
     FFl = np.square(FFazim(l,lmbd,a,Theta,V,b))
     k = 2*np.pi/lmbd
-    kaVcub = np.power(np.multiply(k*a,V),4)
-    return np.divide(np.multiply(FFl,np.multiply(kaVcub,np.pi)),np.square(k*R))
+    kaVquart = np.power(np.multiply(k*a,V),4)
+    return np.divide(np.multiply(FFl,np.multiply(kaVquart,np.pi)),np.square(k*R))
